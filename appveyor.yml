@@ -11,9 +11,9 @@ install:
   - echo y | "%ANDROID_HOME%\tools\android.bat" --silent update sdk --no-ui --all --filter android-19
   - echo y | "%ANDROID_HOME%\tools\android.bat" --silent update sdk --no-ui --all --filter android-16
   - echo y | "%ANDROID_HOME%\tools\android.bat" update sdk -u -a -t build-tools-20.0.0
-  - cmd: mkdir C:\Users\appveyor\.gradle
-  - ps: Start-FileDownload 'https://services.gradle.org/distributions/gradle-2.2-all.zip'
-  - echo y | 7z x gradle-2.2-all.zip  -o"C:\Users\appveyor\.gradle\"
+  # - if not exist  C:\Users\appveyor\.gradle mkdir C:\Users\appveyor\.gradle
+  # - ps: Start-FileDownload 'https://services.gradle.org/distributions/gradle-2.2-all.zip'
+  # - echo y | 7z x gradle-2.2-all.zip  -o"C:\Users\appveyor\.gradle\"
   - SET GRADLE_HOME=C:\Users\appveyor\.gradle\gradle-2.2\
   - SET PATH=%PATH%;%GRADLE_HOME%\bin
   - gradle -v
